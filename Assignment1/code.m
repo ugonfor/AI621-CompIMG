@@ -29,6 +29,7 @@ fprintf("max value of img: %f\n", max(max(banana_image)));
 
 %%%%%
 % Identifying the Correct Bayer Pattern (20pts)
+figure;
 fprintf("====================\n");
 fprintf("Identifying the Correct Bayer Pattern (20pts)\n");
 
@@ -43,7 +44,7 @@ im4 = banana_image(2:2:end, 2:2:end); % g
 
 im_grbg = cat(3, im2, im1, im3);
 subplot(1,4,1); imshow(im_grbg * 5);title('grbg');
-
+imwrite(im_grbg * 5, "./asset/fig1-grbg.jpg");
 
 fprintf("2. rggb\n");
 im1 = banana_image(1:2:end, 1:2:end); % r
@@ -53,6 +54,7 @@ im4 = banana_image(2:2:end, 2:2:end); % b
 
 im_rggb = cat(3, im1, im2/2, im4);
 subplot(1,4,2); imshow(im_rggb * 5);title('rggb');
+imwrite(im_rggb * 5, "./asset/fig1-rggb.jpg");
 
 fprintf("3. bggr\n");
 im1 = banana_image(1:2:end, 1:2:end); % b
@@ -62,6 +64,7 @@ im4 = banana_image(2:2:end, 2:2:end); % r
 
 im_bggr = cat(3, im4, im2/2, im1);
 subplot(1,4,3); imshow(im_bggr * 5);title('bggr');
+imwrite(im_bggr * 5, "./asset/fig1-bggr.jpg");
 
 fprintf("4. gbrg\n");
 im1 = banana_image(1:2:end, 1:2:end); % g
@@ -71,13 +74,14 @@ im4 = banana_image(2:2:end, 2:2:end); % g
 
 im_gbrg = cat(3, im3, im1, im2);
 subplot(1,4,4); imshow(im_gbrg * 5);title('gbrg');
+imwrite(im_gbrg * 5, "./asset/fig1-gbrg.jpg");
 
 fprintf("rggb is right\n");
-
 
 %%%%%
 % White Balancing
 % 1. Gray world automatic white balancing
+fprintf("====================\n");
 fprintf("1. Gray world automatic white balancing\n");
 im_w_r = banana_image(1:2:end, 1:2:end); % r
 im_w_g1 = banana_image(1:2:end, 2:2:end); % g
@@ -101,12 +105,15 @@ im_g_b = im_g_b * (max(max(im_g_g1)) + max(max(im_g_g2)))/2 / max(max(im_g_b));
 figure; 
 im_w_rgb = cat(3, im_w_r, im_w_g1, im_w_b);
 subplot(1,2,1); imshow(im_w_rgb);title('After white balancing (WHITE WORLD)');
+imwrite(im_w_rgb, "./asset/fig2-whiteworld.jpg");
 
 im_g_rgb = cat(3, im_g_r, im_g_g1, im_g_b);
 subplot(1,2,2);imshow(im_g_rgb);title('After white balancing (GREY WORLD)');
+imwrite(im_g_rgb, "./asset/fig2-greyworld.jpg");
 
 %%%%%
 % Demosaicing
+fprintf("====================\n");
 fprintf("Demosaicing\n");
 im_w_r = interp2(im_w_r);
 im_w_g = interp2((im_w_g1 + im_w_g2)/2);
@@ -119,12 +126,14 @@ im_g_b = interp2(im_g_b);
 figure; 
 im_w_rgb = cat(3, im_w_r, im_w_g, im_w_b);
 subplot(1,2,1); imshow(im_w_rgb);title('After Demosaicing (WHITE WORLD)');
-
+imwrite(im_w_rgb, "./asset/fig3-whiteworld.jpg");
 im_g_rgb = cat(3, im_g_r, im_g_g, im_g_b);
 subplot(1,2,2);imshow(im_g_rgb);title('After Demosaicing (GREY WORLD)');
+imwrite(im_g_rgb, "./asset/fig3-greyworld.jpg");
 
 %%%%%
 % Brightness Adjustment and Gamma Correction
+fprintf("====================\n");
 fprintf("Brightness Adjustment and Gamma Correction\n");
 
 % Brightness Adjustment
@@ -157,6 +166,7 @@ for l = 1:6
     end
 
     subplot(4,3,l);imshow(gamma_corrected_img); title(sprintf('Gamma Corrected (with Scaling %d persentage) (GREY)', scaling_percentage(l)));
+    imwrite(gamma_corrected_img, sprintf("./asset/fig4-GAMMA-Scaling(%d)-GREY.jpg", scaling_percentage(l)));
 end
 
 
@@ -189,4 +199,18 @@ for l = 1:6
     end
 
     subplot(4,3,l+6);imshow(gamma_corrected_img); title(sprintf('Gamma Corrected (with Scaling %d persentage) (White)', scaling_percentage(l)));
+    imwrite(gamma_corrected_img, sprintf("./asset/fig4-GAMMA-Scaling(%d)-WHITE.jpg", scaling_percentage(l)));
 end
+
+
+%%%%%
+% Compression
+fprintf("====================\n");
+fprintf("Compression\n");
+imwrite(gamma_corrected_img, "./result/banana.png");
+imwrite(gamma_corrected_img, "./result/banana.jpeg", "Quality", 95);
+imwrite(gamma_corrected_img, "./result/banana_q10.jpeg", "Quality", 10);
+imwrite(gamma_corrected_img, "./result/banana_q15.jpeg", "Quality", 15);
+imwrite(gamma_corrected_img, "./result/banana_q20.jpeg", "Quality", 20);
+imwrite(gamma_corrected_img, "./result/banana_q25.jpeg", "Quality", 25);
+imwrite(gamma_corrected_img, "./result/banana_q30.jpeg", "Quality", 30);

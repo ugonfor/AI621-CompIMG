@@ -222,6 +222,8 @@ imwrite(im_g_rgb, "./asset/fig2-greyworld.jpg");
 
 ```matlab
 %%%%%
+% Demosaicing
+fprintf("====================\n");
 fprintf("Demosaicing\n");
 im_w_r = interp2(im_w_r);
 im_w_g = interp2((im_w_g1 + im_w_g2)/2);
@@ -264,6 +266,7 @@ Demosaicing
 ```matlab
 %%%%%
 % Brightness Adjustment and Gamma Correction
+fprintf("====================\n");
 fprintf("Brightness Adjustment and Gamma Correction\n");
 
 % Brightness Adjustment
@@ -331,8 +334,6 @@ for l = 1:6
     subplot(4,3,l+6);imshow(gamma_corrected_img); title(sprintf('Gamma Corrected (with Scaling %d persentage) (White)', scaling_percentage(l)));
     imwrite(gamma_corrected_img, sprintf("./asset/fig4-GAMMA-Scaling(%d)-WHITE.jpg", scaling_percentage(l)));
 end
-
-scaled_img = im_g_rgb / max_gray * (140/100);
 ```
 
 ### output
@@ -401,13 +402,13 @@ Brightness Adjustment and Gamma Correction
 % Compression
 fprintf("====================\n");
 fprintf("Compression\n");
-imwrite(scaled_img, "./result/banana.png");
-imwrite(scaled_img, "./result/banana.jpeg", "Quality", 95);
-imwrite(scaled_img, "./result/banana_q10.jpeg", "Quality", 10);
-imwrite(scaled_img, "./result/banana_q15.jpeg", "Quality", 15);
-imwrite(scaled_img, "./result/banana_q20.jpeg", "Quality", 20);
-imwrite(scaled_img, "./result/banana_q25.jpeg", "Quality", 25);
-imwrite(scaled_img, "./result/banana_q30.jpeg", "Quality", 30);
+imwrite(gamma_corrected_img, "./result/banana.png");
+imwrite(gamma_corrected_img, "./result/banana.jpeg", "Quality", 95);
+imwrite(gamma_corrected_img, "./result/banana_q10.jpeg", "Quality", 10);
+imwrite(gamma_corrected_img, "./result/banana_q15.jpeg", "Quality", 15);
+imwrite(gamma_corrected_img, "./result/banana_q20.jpeg", "Quality", 20);
+imwrite(gamma_corrected_img, "./result/banana_q25.jpeg", "Quality", 25);
+imwrite(gamma_corrected_img, "./result/banana_q30.jpeg", "Quality", 30);
 
 ```
 
