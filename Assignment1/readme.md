@@ -141,12 +141,14 @@ Since the second and third values bigger than the others, Approximately twice, S
 rggb is right
 ```
 
-<figure>
-	<img src="./asset/fig1-bggr.jpg"/>
-	<img src="./asset/fig1-gbrg.jpg"/>
-	<img src="./asset/fig1-grbg.jpg"/>
-	<img src="./asset/fig1-rggb.jpg"/>
-</figure>
+<img src="./asset/fig1-bggr.jpg"/>
+> fig1-bggr
+<img src="./asset/fig1-gbrg.jpg"/>
+> fig1-gbrg
+<img src="./asset/fig1-grbg.jpg"/>
+> fig1-grbg
+<img src="./asset/fig1-rggb.jpg"/>
+> fig1-rggb
 
 
 
