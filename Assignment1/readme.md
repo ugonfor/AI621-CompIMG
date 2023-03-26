@@ -206,12 +206,13 @@ imwrite(im_g_rgb, "./asset/fig2-greyworld.jpg");
 2. White world automatic white balancing
 ```
 
-<figure>
-	<img src="im1"/>
-	<img src="im2"/>
-	<img src="im3"/>
-	<img src="im4"/>
-</figure>
+<img src="./asset/fig2-greyworld.jpg"/>
+
+> fig2-greyworld
+> 
+<img src="./asset/fig2-whiteworld.jpg"/>
+
+> fig2-whiteworld
 
 
 
@@ -246,12 +247,13 @@ imwrite(im_g_rgb, "./asset/fig3-greyworld.jpg");
 Demosaicing
 ```
 
-<figure>
-	<img src="im1"/>
-	<img src="im2"/>
-	<img src="im3"/>
-	<img src="im4"/>
-</figure>
+<img src="./asset/fig3-greyworld.jpg"/>
+
+> fig3-greyworld
+
+<img src="./asset/fig3-whiteworld.jpg"/>
+
+> fig3-whiteworld
 
 
 
@@ -337,16 +339,57 @@ scaled_img = im_g_rgb / max_gray * (140/100);
 
 ```
 ====================
-Demosaicing
+Brightness Adjustment and Gamma Correction
 ```
 
-<figure>
-	<img src="im1"/>
-	<img src="im2"/>
-	<img src="im3"/>
-	<img src="im4"/>
-</figure>
+<img src="./asset/fig4-GAMMA-Scaling(100)-GREY.jpg"/>
 
+> fig4-GAMMA-Scaling(100)-GREY.jpg
+
+<img src="./asset/fig4-GAMMA-Scaling(110)-GREY.jpg"/>
+
+> fig4-GAMMA-Scaling(110)-GREY.jpg
+
+<img src="./asset/fig4-GAMMA-Scaling(120)-GREY.jpg"/>
+
+> fig4-GAMMA-Scaling(120)-GREY.jpg
+
+<img src="./asset/fig4-GAMMA-Scaling(130)-GREY.jpg"/>
+
+> fig4-GAMMA-Scaling(130)-GREY.jpg
+
+<img src="./asset/fig4-GAMMA-Scaling(140)-GREY.jpg"/>
+
+> fig4-GAMMA-Scaling(140)-GREY.jpg
+
+<img src="./asset/fig4-GAMMA-Scaling(150)-GREY.jpg"/>
+
+> fig4-GAMMA-Scaling(150)-GREY.jpg
+
+
+<img src="./asset/fig4-GAMMA-Scaling(100)-WHITE.jpg"/>
+
+> fig4-GAMMA-Scaling(100)-WHITE.jpg
+
+<img src="./asset/fig4-GAMMA-Scaling(110)-WHITE.jpg"/>
+
+> fig4-GAMMA-Scaling(110)-WHITE.jpg
+
+<img src="./asset/fig4-GAMMA-Scaling(120)-WHITE.jpg"/>
+
+> fig4-GAMMA-Scaling(120)-WHITE.jpg
+
+<img src="./asset/fig4-GAMMA-Scaling(130)-WHITE.jpg"/>
+
+> fig4-GAMMA-Scaling(130)-WHITE.jpg
+
+<img src="./asset/fig4-GAMMA-Scaling(140)-WHITE.jpg"/>
+
+> fig4-GAMMA-Scaling(140)-WHITE.jpg
+
+<img src="./asset/fig4-GAMMA-Scaling(150)-WHITE.jpg"/>
+
+> fig4-GAMMA-Scaling(150)-WHITE.jpg
 
 
 ## COMPRESSION (20 PTS)
@@ -356,10 +399,16 @@ Demosaicing
 ```matlab
 %%%%%
 % Compression
+fprintf("====================\n");
 fprintf("Compression\n");
 imwrite(scaled_img, "./result/banana.png");
-imwrite(scaled_img, "./result/banana.jpg");
-imwrite(scaled_img, "./result/banana_q10.jpg", "Quality", 10);
+imwrite(scaled_img, "./result/banana.jpeg", "Quality", 95);
+imwrite(scaled_img, "./result/banana_q10.jpeg", "Quality", 10);
+imwrite(scaled_img, "./result/banana_q15.jpeg", "Quality", 15);
+imwrite(scaled_img, "./result/banana_q20.jpeg", "Quality", 20);
+imwrite(scaled_img, "./result/banana_q25.jpeg", "Quality", 25);
+imwrite(scaled_img, "./result/banana_q30.jpeg", "Quality", 30);
+
 ```
 
 ### output
@@ -369,7 +418,40 @@ imwrite(scaled_img, "./result/banana_q10.jpg", "Quality", 10);
 Compression
 ```
 
-1. Difference between two files?
+
+<img src="./result/banana.jpeg"/>
+
+> banana.jpeg quality:95
+
+<img src="./result/banana.png"/>
+
+> banana.png
+
+<img src="./result/banana_q15.jpeg"/>
+
+> banana.jpeg quality:15
+
+<img src="./result/banana_q20.jpeg"/>
+
+> banana.jpeg quality:20
+
+<img src="./result/banana_q25.jpeg"/>
+
+> banana.jpeg quality:25
+
+<img src="./result/banana_q30.jpeg"/>
+
+> banana.jpeg quality:30
+
+
+1. Difference between two files? 
+
+> file size is different. PNG file : 12.0MB, JPEG file: 2.07MB, JPEG file is almost 6 times smaller than PNG file.
+
 2. The compression ratio is the ratio between the size of the uncompressed file  (in bytes) and the size of the compressed file (in bytes). What is the compression  ratio? 
+
+> 12590196 / 2177364 = 5.78
+
 3. By changing the JPEG quality settings, determine the lowest setting for which the  compressed image indistinguishable from the original. What is the compression ratio?
 
+> I think that the 25 is the lowest setting. 12590196 / 355205 = 35.44
