@@ -142,10 +142,10 @@ rggb is right
 ```
 
 <figure>
-	<img src="im1"/>
-	<img src="im2"/>
-	<img src="im3"/>
-	<img src="im4"/>
+	<img src="./asset/fig1-bggr.jpg"/>
+	<img src="./asset/fig1-gbrg.jpg"/>
+	<img src="./asset/fig1-grbg.jpg"/>
+	<img src="./asset/fig1-rggb.jpg"/>
 </figure>
 
 
