@@ -209,7 +209,7 @@ imwrite(im_g_rgb, "./asset/fig2-greyworld.jpg");
 <img src="./asset/fig2-greyworld.jpg"/>
 
 > fig2-greyworld
-> 
+
 <img src="./asset/fig2-whiteworld.jpg"/>
 
 > fig2-whiteworld
@@ -392,6 +392,8 @@ Brightness Adjustment and Gamma Correction
 
 > fig4-GAMMA-Scaling(150)-WHITE.jpg
 
+I think fig4-GAMMA-Scaling(150)-WHITE.jpg is the best.
+150 % is the best value.
 
 ## COMPRESSION (20 PTS)
 
