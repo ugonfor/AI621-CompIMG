@@ -337,4 +337,17 @@ disp("DONE!");
 ```
 
 ### Video
+face : https://youtube.com/shorts/xZi0MB1UE30
 
+baby2 : https://youtu.be/Tes-ZZVfl60
+
+# EXTRA CREDIT: CAPTURE AND MOTION-MAGNIFY YOUR OWN VIDEO(S) (UP TO 30 POINTS)
+### Description
+
+I tried to find the nice hyperparameter, but It's hard to find it.
+So here is my result, but I think it's not perfect result.
+
+
+### Video
+
+hand : ./figure/hand_RECON.avi
