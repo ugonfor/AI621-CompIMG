@@ -46,13 +46,13 @@ imwrite(baby2_yiq(:,:,:,1), "./figure/initial_YIQ.jpg");
 
 ### images
 
-![initial_face](.\figure\initial_face.jpg)
+![initial_face](./figure/initial_face.jpg)
 
 `./figure/initial_face.jpg`
 
 
 
-![initial_face](.\figure\initial_yiq.jpg)
+![initial_face](./figure/initial_yiq.jpg)
 
 `.\figure\initial_yiq.jpg`
 
@@ -131,31 +131,31 @@ clear('G0');clear('G1');clear('G2');clear('G3');clear('G4');
 
 `./figure/Initial_YIQ.jpg`
 
-![L0](.\figure\L0.png)
+![](./figure/L0.png)
 
 `.\figure\L0.png`
 
 
 
-![L0](.\figure\L1.png)
+![L0](./figure/L1.png)
 
 `.\figure\L1.png`
 
 
 
-![L0](.\figure\L2.png)
+![L0](./figure/L2.png)
 
 `.\figure\L2.png`
 
 
 
-![L0](.\figure\L3.png)
+![L0](./figure/L3.png)
 
 `.\figure\L3.png`
 
 
 
-![L0](.\figure\L4.png)
+![L0](./figure/L4.png)
 
 `.\figure\L4.png`
 
@@ -215,7 +215,7 @@ plot(freq, abs(fftHd));
 
 ### Images
 
-![](C:\Users\ryuhy\Desktop\coursework\AI621 CompIMG\Assignment #2\figure\TEMPORAL_FILTERING.jpg)
+![](./figure/TEMPORAL_FILTERING.jpg)
 
 
 
