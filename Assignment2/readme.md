@@ -52,9 +52,9 @@ imwrite(baby2_yiq(:,:,:,1), "./figure/initial_YIQ.jpg");
 
 
 
-![initial_face](./figure/initial_yiq.jpg)
+![initial_face](./figure/initial_YIQ.jpg)
 
-`.\figure\initial_yiq.jpg`
+`.\figure\initial_YIQ.jpg`
 
 
 
