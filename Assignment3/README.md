@@ -370,4 +370,6 @@ im_blend(im_blend == 0) = im_background(im_blend==0);
 ![input](./assets/result3.jpg)
 
 #### Comments
-I tried many types of images and 
+I tried many types of images and identified some feature of good mixed images.
+
+The pictures which have the clear boundary (such as strong difference of color or texture) are good input as the object images. And the pictures have the clear and clean space are good at background images.
