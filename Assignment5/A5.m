@@ -139,5 +139,5 @@ end
 imshow(all_focus);
 imwrite(all_focus,"all_focus.png");
 imshow(1-f_depth);
-imwrite(all_focus,"f_depth.png");
+imwrite(1-f_depth,"f_depth.png");
 
